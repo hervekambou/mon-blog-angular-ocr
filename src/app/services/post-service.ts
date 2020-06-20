@@ -1,9 +1,13 @@
 import { Injectable } from '@angular/core';
+import { Subject } from 'rxjs';
+import { Post } from '../interfaces/post';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PostService {
+
+  postSubject = new Subject<Post[]>();
   posts = [
     {
       title: 'Mon premier post',
